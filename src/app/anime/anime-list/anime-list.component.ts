@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '../anime';
 import { AnimeService } from '../anime.service';
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-anime-list',
@@ -20,12 +22,26 @@ export class AnimeListComponent implements OnInit {
     });
   }
 
+  getAverageRating(): string {
+    let avg = 0; 
+
+    this.animes.forEach( anime => {
+      avg += Number(anime.Rating);
+    })
+
+    return (avg / this.animes.length).toFixed(2);
+  }
+
   onSelected(anime: Anime): void {
     this.selected = true;
     this.selectedBAnime = anime;
   }
 
   ngOnInit() {
+    console.log("On init");
+    console.log(this.animes);
+    
+    
     this.getAnimes();
   }
 

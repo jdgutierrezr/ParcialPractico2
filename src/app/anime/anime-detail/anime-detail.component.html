@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid m-4">
   <div class="row">
 
     <div class="col">
@@ -16,7 +16,18 @@
         <dt class="bold">Number of episodes</dt>
         <dd class="caption">{{ animeDetail.total_episodes }}</dd>
         <hr />
+        <a routerLink="" class="btn btn-primary">Back</a>
 
+        <div class="container p-2">
+          <div class="d-flex flex-space-between">
+              
+            <div *ngFor="let season in animeDetail.seasons">
+              <p>{{ season.name }}</p>
+              <p class="badge text-bg-primary rounded-pill">{{ season.episodes }}</p>
+            </div>
+
+          </div>
+        </div>
       </dl>
     </div>
     <div class="col-3">

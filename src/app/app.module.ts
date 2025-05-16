@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnimeModule } from './anime/anime.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink, RouterModule } from '@angular/router';
+import { AnimeRoutingModule } from './anime/anime-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     AnimeModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterLink,
+    RouterModule,
+    AnimeRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
